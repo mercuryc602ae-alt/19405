@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交互式图片画廊 - 纯净版</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #info-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 120, 255, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            z-index: 2000;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">正在加载资源...</div>
+    
+    <div id="info-panel"> 
+        <div style="font-weight: bold; margin-bottom: 5px;">控制说明</div> 
+        <div>滚轮: 垂直滚动 | Alt + 滚轮: 缩放</div> 
+        <div>Shift + 拖拽: 自由平移</div> 
+        <div>点击图片: 查看详情</div> 
+    </div>
+
+    <button id="guide-btn">使用说明</button> 
+    <div id="guide-modal"> 
+        <div class="guide-content"> 
+            <span class="close-btn">&times;</span> 
+            <h2>🖼️ 图片替换说明</h2> 
+            <p>替换图片非常简单，请按照以下步骤操作：</p> 
+            <ol> 
+                <li>将您的图片放入 <code>images/</code> 目录下。</li> 
+                <li>命名为 <code>001.png</code>, <code>002.png</code> 等。</li> 
+                <li>如果是项目作品，放入 <code>images/01-品牌设计/</code> 等对应目录。</li> 
+                <li>刷新页面即可看到更新。</li> 
+            </ol> 
+            <p><i>提示：为了最佳展示效果，建议保持图片比例一致。</i></p> 
+        </div> 
+    </div>
+
+    <!-- 加载 Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- 主逻辑 -->
+    <script src="script.js"></script>
+</body>
+</html>
